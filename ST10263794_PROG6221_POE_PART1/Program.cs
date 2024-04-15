@@ -16,5 +16,12 @@ static void Main(string[] args)
 
         Console.WriteLine("Select an option:");
         int option = int.Parse(Console.ReadLine());
+
+        switch(option)
+        {
+            case 1:
+                app.RecipeDetails();
+                break;
+        }
     }
 }
