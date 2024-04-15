@@ -32,6 +32,10 @@ static void Main(string[] args)
                 double factor = double.Parse(Console.ReadLine());
                 app.RecipeScale(factor);
                 break;
+
+            case 4: 
+                app.RecipeQuantitiesReset(); 
+                break;
         }
     }
 }
