@@ -65,5 +65,13 @@ namespace ST10263794_PROG6221_POE_PART1
 
         }
 
+        public void RecipeScale(double factor)
+        {
+            foreach (var ingredients in recipe.Ingredients)
+            {
+                ingredients.quantity *= factor;
+            }
+        }
+
     }
 }
