@@ -40,6 +40,13 @@ static void Main(string[] args)
             case 5: 
                 app.ClearRecipeData();
                 break;
+
+            case 6:
+                running = false;
+                break;
+            default:
+                Console.WriteLine("Invalid option. Please try again.");
+                break;
         }
     }
 }
