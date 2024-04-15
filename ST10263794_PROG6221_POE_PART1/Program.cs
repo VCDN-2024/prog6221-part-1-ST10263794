@@ -26,6 +26,12 @@ static void Main(string[] args)
             case 2:
                 app.RecipeDisplay();
                 break;
+
+            case 3:
+                Console.WriteLine("Enter scale factor:");
+                double factor = double.Parse(Console.ReadLine());
+                app.RecipeScale(factor);
+                break;
         }
     }
 }
