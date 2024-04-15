@@ -36,6 +36,10 @@ static void Main(string[] args)
             case 4: 
                 app.RecipeQuantitiesReset(); 
                 break;
+
+            case 5: 
+                app.ClearRecipeData();
+                break;
         }
     }
 }
