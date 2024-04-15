@@ -126,6 +126,13 @@ namespace ST10263794_PROG6221_POE_PART1
                 return new double[0];
             }
         }
+
+        public void ClearRecipeData()
+        {
+            recipe = null;
+            originalQuantities = null;
+        }
+
     }
 
 }
