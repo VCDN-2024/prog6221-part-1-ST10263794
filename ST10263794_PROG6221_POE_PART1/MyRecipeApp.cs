@@ -9,7 +9,7 @@ namespace ST10263794_PROG6221_POE_PART1
     internal class MyRecipeApp
     {
         private Recipe recipe;
-
+        private double[] originalQuantities;
         public void RecipeDetails()
         {
             recipe = new Recipe();
@@ -34,15 +34,23 @@ namespace ST10263794_PROG6221_POE_PART1
 
                 recipe.Ingredients[i] = new Ingredients { name = name, quantity = quantity, unit = unit };
 
-                {
-                    Console.WriteLine($"Enter step {i + 1}:");
-                    recipe.Steps[i] = Console.ReadLine();
-                }
+               
             }
+
+
+
+            originalQuantities = GetOriginalQuantities(recipe.Ingredients);
 
             Console.WriteLine("Enter the number of steps:");
             int numSteps = int.Parse(Console.ReadLine());
             recipe.Steps = new string[numSteps];
+
+            // Loop to enter details for each step
+            for (int i = 0; i < numSteps; i++)
+            {
+                Console.WriteLine($"Enter step {i + 1}:");
+                recipe.Steps[i] = Console.ReadLine();
+            }
 
         }
 
@@ -72,6 +80,53 @@ namespace ST10263794_PROG6221_POE_PART1
                 ingredients.quantity *= factor;
             }
         }
+      
+        public void RecipeQuantitiesReset()
+        {
+            if (recipe != null && recipe.Ingredients != null)
+            {
+                
+                for (int i = 0; i < recipe.Ingredients.Length; i++)
+                {
+                    if (originalQuantities.Length == recipe.Ingredients.Length)
+                    {
+                        recipe.Ingredients[i].quantity = originalQuantities[i];
+                    }
+                    else
+                    {
+                        Console.WriteLine("Error: Unable to reset quantities. Original quantities data is missing or corrupted.");
+                        return;
+                    }
+                }
 
+                Console.WriteLine("Ingredient quantities reset to original values.");
+            }
+            else
+            {
+                Console.WriteLine("Error: No recipe data available to reset quantities.");
+            }
+        }
+
+        private double[] GetOriginalQuantities(Ingredients[] ingredients)
+        {
+            if (ingredients != null)
+            {
+                
+                double[] originalQuantities = new double[ingredients.Length];
+
+                for (int i = 0; i < ingredients.Length; i++)
+                {
+                    originalQuantities[i] = ingredients[i].quantity;
+                }
+
+                return originalQuantities;
+            }
+            else
+            {
+                return new double[0];
+            }
+        }
     }
+
 }
+
