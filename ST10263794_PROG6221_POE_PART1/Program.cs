@@ -22,6 +22,10 @@ static void Main(string[] args)
             case 1:
                 app.RecipeDetails();
                 break;
+
+            case 2:
+                app.RecipeDisplay();
+                break;
         }
     }
 }
