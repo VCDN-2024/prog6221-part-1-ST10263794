@@ -46,7 +46,24 @@ namespace ST10263794_PROG6221_POE_PART1
 
         }
 
+        public void RecipeDisplay()
+        {
+            Console.WriteLine($"Recipe: {recipe.name}");
+            Console.WriteLine("Ingredients:");
 
+            foreach (var ingredients in recipe.Ingredients)
+            {
+                Console.WriteLine($"{ingredients.quantity} {ingredients.unit} of {ingredients.name}");
+            }
+
+            Console.WriteLine("Steps:");
+
+            for (int i = 0; i < recipe.Steps.Length; i++)
+            {
+                Console.WriteLine($"{i + 1}) {recipe.Steps[i]}");
+            }
+
+        }
 
     }
 }
