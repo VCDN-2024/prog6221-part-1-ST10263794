@@ -1,5 +1,11 @@
 ﻿using ST10263794_PROG6221_POE_PART1;
 
+//Code attribution
+//Book: Pro C# 10 with .NET 6
+//Eleventh Edition
+//Authors: Andrew TTroelsen and Phil Japikse
+//Chapters: 1-7
+
 // Main program class
 static void Main(string[] args)
 {
