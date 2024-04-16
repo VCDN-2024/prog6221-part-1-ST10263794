@@ -15,7 +15,8 @@ static void Main(string[] args)
         Console.WriteLine("3. Scale recipe");
         Console.WriteLine("4. Reset quantities");
         Console.WriteLine("5. Clear data");
-        Console.WriteLine("6. Exit");
+        Console.WriteLine("6. Exit Options");
+        Console.WriteLine("7. Exit Application");
 
         Console.WriteLine("Select an option:");
         int option = int.Parse(Console.ReadLine());
@@ -51,6 +52,10 @@ static void Main(string[] args)
                 break;
             default:
                 Console.WriteLine("Invalid option. Please try again.");
+                break;
+
+            case 7:
+                 System.Environment.Exit(0);
                 break;
         }
     }
