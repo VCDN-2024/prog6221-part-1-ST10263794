@@ -61,15 +61,23 @@ namespace ST10263794_PROG6221_POE_PART1
 
             foreach (var ingredients in recipe.Ingredients)
             {
-                Console.WriteLine($"{ingredients.quantity} {ingredients.unit} of {ingredients.name}");
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.Write($"{ingredients.quantity} {ingredients.unit} of ");
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.WriteLine(ingredients.name);
             }
 
+            Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine("Steps:");
+
 
             for (int i = 0; i < recipe.Steps.Length; i++)
             {
-                Console.WriteLine($"{i + 1}) {recipe.Steps[i]}");
+                Console.ForegroundColor = ConsoleColor.Cyan;
+                Console.WriteLine($"{i + 1}. {recipe.Steps[i]}");
             }
+
+            Console.ForegroundColor = ConsoleColor.White;
 
         }
 

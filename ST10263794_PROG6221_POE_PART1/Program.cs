@@ -33,11 +33,11 @@ static void Main(string[] args)
                 app.RecipeScale(factor);
                 break;
 
-            case 4: 
-                app.RecipeQuantitiesReset(); 
+            case 4:
+                app.RecipeQuantitiesReset();
                 break;
 
-            case 5: 
+            case 5:
                 app.ClearRecipeData();
                 break;
 
