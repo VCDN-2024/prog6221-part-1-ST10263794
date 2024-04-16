@@ -91,9 +91,48 @@ namespace ST10263794_PROG6221_POE_PART1
         // Method to scale the recipe by a given factor
         public void RecipeScale(double factor)
         {
+            // Dictionary to map units to their conversion factors
+            Dictionary<string, double> conversionFactors = new Dictionary<string, double>
+    {
+        { "teaspoon", 1.0 },
+        { "tablespoon", 3.0 },
+        { "cup", 48.0 },
+        // Add more units and their conversion factors as needed
+    };
+
             foreach (var ingredients in recipe.Ingredients)
             {
+                // Scale the quantity
                 ingredients.quantity *= factor;
+
+                // Convert units if needed
+                if (conversionFactors.ContainsKey(ingredients.unit))
+                {
+                    double conversionFactor = conversionFactors[ingredients.unit];
+                    ingredients.quantity /= conversionFactor;
+                    ingredients.unit = GetNextUnit(ingredients.unit);
+                }
+            }
+        }
+
+        // Method to get the next unit of measurement for scaling
+        private string GetNextUnit(string currentUnit)
+        {
+            // Dictionary to map units to their next larger unit
+            Dictionary<string, string> nextUnits = new Dictionary<string, string>
+    {
+        { "teaspoon", "tablespoon" },
+        { "tablespoon", "cup" },
+        // Add more unit conversions as needed
+    };
+
+            if (nextUnits.ContainsKey(currentUnit))
+            {
+                return nextUnits[currentUnit];
+            }
+            else
+            {
+                return currentUnit;
             }
         }
 
