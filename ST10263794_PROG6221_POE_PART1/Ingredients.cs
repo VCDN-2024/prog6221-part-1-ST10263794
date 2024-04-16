@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace ST10263794_PROG6221_POE_PART1
 {
+    // Class to represent an ingredient
     internal class Ingredients
     {
      

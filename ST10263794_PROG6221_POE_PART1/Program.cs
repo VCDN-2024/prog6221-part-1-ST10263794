@@ -1,12 +1,15 @@
 ﻿using ST10263794_PROG6221_POE_PART1;
 
+// Main program class
 static void Main(string[] args)
 {
     MyRecipeApp app = new MyRecipeApp();
     bool running = true;
 
+    // Main program loop
     while (running)
     {
+        // Display menu options
         Console.WriteLine("1. Enter recipe details");
         Console.WriteLine("2. Display recipe");
         Console.WriteLine("3. Scale recipe");
@@ -17,8 +20,10 @@ static void Main(string[] args)
         Console.WriteLine("Select an option:");
         int option = int.Parse(Console.ReadLine());
 
-        switch(option)
+        // Switch statement to handle user input
+        switch (option)
         {
+            //Case statements for whichever option the user chooses
             case 1:
                 app.RecipeDetails();
                 break;
